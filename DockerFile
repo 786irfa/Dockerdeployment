@@ -1,0 +1,12 @@
+##use the officia image from the docker hub
+FROM python:3.9-slim
+##set the working directory
+WORKDIR/app
+##copy the current directory contents into container at/app
+COPY . /app
+##install any needed package specified in requirements.txt  
+RUN pip install Flask
+##make port 5000 avaiable to the world outside this container
+EXPOSE 5000
+##run app.py when the container launches
+CMD ["python","app.py"]
